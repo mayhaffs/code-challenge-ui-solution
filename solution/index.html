@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ui-form-solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link href="reset.css" rel="stylesheet" />
+  <link href="custom.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="container">
+    <form id="form-id" name="form-id" novalidate="novalidate">
+      <header>
+        <p id="form-heading">One-time Loan Payment</p>
+        <p id="form-instructions">
+          Fill out the form below to complete your payment.
+        </p>
+        <br />
+      </header>
+      <section>
+        <!--  -->
+        <div class="row">
+          <fieldset class="col">
+            <label for="field-1" class="form-label">Loan Account Number</label>
+            <input class="form-input" type="text" id="field-1" name="loanAccountNumber" value="" />
+          </fieldset>
+        </div>
+
+        <!--  -->
+        <div class="row no-gutters">
+          <div class="col-sm-6 no-gutters">
+            <fieldset>
+              <label for="field-2" class="form-label">Type of Account</label>
+              <input type="hidden" id="field-2" name="typeOfAccount" value="checking" />
+              <div class="form-input">
+                <label class="form-radio">
+                  <input type="radio" id="checking" name="typeOfAccount" value="Checking" checked="true" />
+                  Checking
+                </label>
+                <label class="form-radio" for="debit">
+                  <input type="radio" id="debit" name="typeOfAccount" value="Debit Card" />
+                  Debit Card
+                </label>
+              </div>
+              <label id="field-2-error" class="error" for="typeOfAccount" style="display: none;"></label>
+            </fieldset>
+
+            <!--  -->
+            <div id="checking-form">
+              <fieldset>
+                <label for="field-3" class="form-label">Routing Number</label>
+                <input class="form-input" type="text" id="field-3" name="routingNumber" value="" />
+              </fieldset>
+
+              <fieldset>
+                <label for="field-4" class="form-label">Bank Account Number</label>
+                <input class="form-input" type="text" id="field-4" name="bankAccountNumber" value="" />
+              </fieldset>
+
+              <fieldset class="last">
+                <label for="field-5" class="form-label">Confirm Bank Account Number</label>
+                <input class="form-input" type="text" id="field-5" name="confirmBankAccountNumber" value="" />
+              </fieldset>
+            </div>
+
+            <!--  -->
+            <div id="debit-form" class="d-none">
+              <fieldset>
+                <label for="field-6" class="form-label">Card Number</label>
+                <input class="form-input" type="text" id="field-6" name="cardNumber" value="" />
+              </fieldset>
+
+              <fieldset>
+                <label for="field-7" class="form-label">Name On Card</label>
+                <input class="form-input" type="text" id="field-7" name="nameOnCard" value="" />
+              </fieldset>
+
+              <div class="row no-gutters">
+                <fieldset class="col-6 last">
+                  <label for="field-8" class="form-label">Expiration Date</label>
+                  <input class="form-input" type="text" id="field-8" name="expirationDate" value="" />
+                </fieldset>
+                <fieldset class="col-6 last last-col">
+                  <label for="field-9" class="form-label">CVV</label>
+                  <input class="form-input" type="text" id="field-9" name="cvv" value="" />
+                </fieldset>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6" id="image-column">
+            <div class="image-container">
+              <img src="images/account-number-photo.png" alt="account-number-photo" class="image-class"
+                id="checking-photo" />
+              <img src="images/debit-cvv-photo.png" alt="account-number-photo" class="image-class d-none"
+                id="debit-photo" />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="form-submit" class="btn">
+          MAKE PAYMENT
+        </button>
+      </section>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="validate.min.js"></script>
+  <script src="custom.js"></script>
+</body>
+
+</html>
